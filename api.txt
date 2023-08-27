@@ -1,0 +1,8 @@
+API for create user details
+1. http://localhost:9090/portfolioFeedback/message/create
+
+API for get message
+2. http://localhost:9090/portfolioFeedback/message
+
+// API for delete 
+2. http://localhost:9090/portfolioFeedback/delete/64eb948fc6fbc5f626b2c042
