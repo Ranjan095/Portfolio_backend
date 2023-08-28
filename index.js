@@ -10,7 +10,14 @@ let app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/portfolioFeedback", portfolioFeedbackRoute);
+app.get("/portfolioFeedback", portfolioFeedbackRoute);
+app.use("/", async (req, res) => {
+  try {
+    res.status(200).send({ msg: "Home page" });
+  } catch (error) {
+    res.status(400).send({ msg: error.message });
+  }
+});
 
 app.listen(`${process.env.PORT}`, async () => {
   try {
