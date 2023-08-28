@@ -6,10 +6,10 @@ const { UserModel } = require("../models/portfolioFeedbackModel");
 let portfolioFeedbackRoute = express.Router();
 
 portfolioFeedbackRoute.post("/message/create", async (req, res) => {
-  let { name, email, message } = req.body;
-  let createdAt = new Date();
   try {
-    let newFeedBack = new UserModel({ name, email, message, createdAt });
+    let { name, email, message } = req.body;
+    let createdAt = new Date();
+    let newFeedBack = await new UserModel({ name, email, message, createdAt });
     await newFeedBack.save();
     res.status(200).send({ msg: "Feedback has been added" });
   } catch (error) {
