@@ -10,8 +10,8 @@ let app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/portfolioFeedback", portfolioFeedbackRoute);
-app.use("/", async (req, res) => {
+app.use("/portfolioFeedback", portfolioFeedbackRoute);
+app.get("/", async (req, res) => {
   try {
     res.status(200).send({ msg: "Home page" });
   } catch (error) {
